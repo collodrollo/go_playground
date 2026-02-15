@@ -9,3 +9,17 @@ func Sum(arr []int) int {
 
 	return total
 }
+
+func SumAll(slicesToSum ...[]int) []int {
+	sums := make([]int, len(slicesToSum))
+	// sums := []int{}
+
+	for i, slice := range slicesToSum {
+		// sums = append(sums, Sum(slice))
+		sums[i] = Sum(slice)
+	}
+
+	// make + assignment much faster than appending (3x)
+
+	return sums
+}
