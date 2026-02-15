@@ -23,3 +23,27 @@ func SumAll(slicesToSum ...[]int) []int {
 
 	return sums
 }
+
+func SumAllTails(slicesToSum ...[]int) []int {
+	tailSums := make([]int, len(slicesToSum))
+
+	for i, slice := range slicesToSum {
+		if len(slice) == 0 {
+			tailSums[i] = 0
+		} else {
+			tailSums[i] = Sum(slice[1:])
+		}
+	}
+
+	return tailSums
+}
+
+// func tailSum(slice []int) int {
+// 	sum := 0
+
+// 	for i := 1; i < len(slice); i++ {
+// 		sum += slice[i]
+// 	}
+
+// 	return sum
+// }

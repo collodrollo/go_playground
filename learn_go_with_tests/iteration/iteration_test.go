@@ -16,3 +16,5 @@ func BenchmarkRepeat(b *testing.B) {
 		Repeat("a", 5)
 	}
 }
+
+// go test -bench=.
